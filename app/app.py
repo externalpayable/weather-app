@@ -4,11 +4,11 @@ import requests
 
 app = Flask(__name__)
 
+API_KEY = 'YOUR_API_KEY'  # Replace with your actual API key
+
 @app.route('/weather/<city>')
 def get_weather(city):
-    # Replace 'API_KEY' with your actual API key
-    api_key = 'API_KEY'
-    url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}'
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}'
 
     response = requests.get(url)
     data = response.json()
